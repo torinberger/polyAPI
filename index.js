@@ -6,6 +6,10 @@ const bodyParser = require('koa-bodyparser')
 const app = new Koa();
 const router = new Router();
 
+app
+  .use(cors())
+  .use(bodyParser());
+
 router.get('/', (ctx, next) => {
   ctx.body = "pong";
 });
@@ -13,8 +17,6 @@ router.get('/', (ctx, next) => {
 const apiRouter = require('./api');
 
 app
-  .use(cors())
-  .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods())
   .use(apiRouter.routes())
