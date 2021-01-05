@@ -1,0 +1,26 @@
+{
+  "name": "polyapi",
+  "version": "0.0.1",
+  "description": "RESTful API for polyphasic.net.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torinberger/polyAPI.git"
+  },
+  "author": "torinberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/torinberger/polyAPI/issues"
+  },
+  "homepage": "https://github.com/torinberger/polyAPI#readme",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.0.0",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "mongoose": "^5.11.10"
+  }
+}
