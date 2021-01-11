@@ -1,4 +1,5 @@
 const database = require('../database');
+const util = require('../util');
 const Router = require('@koa/router');
 
 const logRouter = new Router();
@@ -51,13 +52,10 @@ logRouter.post('/entries/get', async (ctx, next) => {
 
   const userInDB = await database.users.find({ userName }).exec();
   if (userInDB) {
-    let logsInDB = await database.logs.find({ userName }).exec();
-
-    for (var i = 0; i < userInDB.historicSchedules.length; i++) {
-      for (var i = 0; i < userInDB.historicSchedules.length; i++) {
-
-      }
-    }
+    postData = util.cleanObj(postData); // remove all empty params
+    let logsInDB = await database.logs.find(postData).exec();
+    // FIND ENTRIES NOT LOGS
+    
   } else {
     ctx.status = 401;
   }
